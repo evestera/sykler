@@ -12,6 +12,7 @@
     "react-scripts": "3.1.1",
     "typescript": "3.6.2"
   },
+  "proxy": "https://gbfs.urbansharing.com/oslobysykkel.no/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

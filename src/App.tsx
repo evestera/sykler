@@ -1,16 +1,13 @@
 import React from 'react';
 import './App.css';
+import { AppContent } from './AppContent';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Hello world
-        </p>
+        <AppContent />
       </header>
     </div>
   );
-}
-
-export default App;
+};
