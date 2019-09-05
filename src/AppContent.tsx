@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import { useFetch } from './useFetch';
-import { StationInformation } from './StationInformation';
-import { StationStatus, Station as StationStatusStation } from './StationStatus';
+import { StationInformation } from './api/StationInformation';
+import { StationStatus, Station as StationStatusStation } from './api/StationStatus';
 import { StationView } from './StationView';
-import StationInformationSchema from './StationInformationSchema.json';
-import StationStatusSchema from './StationStatusSchema.json';
+import StationInformationSchema from './api/StationInformationSchema.json';
+import StationStatusSchema from './api/StationStatusSchema.json';
 
 export const AppContent: React.FC = () => {
   const stationInformationState = useFetch<StationInformation>('/station_information.json', StationInformationSchema);

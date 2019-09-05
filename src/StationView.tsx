@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Station as StationInformationStation } from './StationInformation';
-import { Station as StationStatusStation } from './StationStatus';
+import { Station as StationInformationStation } from './api/StationInformation';
+import { Station as StationStatusStation } from './api/StationStatus';
 
 type Props = {
   station: StationInformationStation,
