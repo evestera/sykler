@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+       "source": "/station_information.json",
+       "function": "station_information_json"
+     },
+     {
+      "source": "/station_status.json",
+      "function": "station_status_json"
+     }
+    ]
+  }
+}
