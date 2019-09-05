@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Root",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "number"
+    },
+    "ttl": {
+      "type": "number"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "stations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "station_id": {
+                "type": "string"
+              },
+              "is_installed": {
+                "type": "number"
+              },
+              "is_renting": {
+                "type": "number"
+              },
+              "is_returning": {
+                "type": "number"
+              },
+              "last_reported": {
+                "type": "number"
+              },
+              "num_bikes_available": {
+                "type": "number"
+              },
+              "num_docks_available": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "station_id",
+              "is_installed",
+              "is_renting",
+              "is_returning",
+              "last_reported",
+              "num_bikes_available",
+              "num_docks_available"
+            ]
+          }
+        }
+      },
+      "required": [
+        "stations"
+      ]
+    }
+  },
+  "required": [
+    "last_updated",
+    "ttl",
+    "data"
+  ]
+}

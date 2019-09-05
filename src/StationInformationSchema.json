@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Root",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "number"
+    },
+    "ttl": {
+      "type": "number"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "stations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "station_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "lat": {
+                "type": "number"
+              },
+              "lon": {
+                "type": "number"
+              },
+              "capacity": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "station_id",
+              "name",
+              "address",
+              "lat",
+              "lon",
+              "capacity"
+            ]
+          }
+        }
+      },
+      "required": [
+        "stations"
+      ]
+    }
+  },
+  "required": [
+    "last_updated",
+    "ttl",
+    "data"
+  ]
+}
