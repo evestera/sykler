@@ -19,24 +19,19 @@ export const AppContent: React.FC = () => {
   if (stationInformationState.isErr()) {
     return <p>Feil ved henting av stasjonsdata:<br /> {stationInformationState.error}</p>
   }
-
   if (stationStatusState.isErr()) {
     return <p>Feil ved henting av tilgjengelighetsdata:<br /> {stationStatusState.error}</p>
   }
 
-  const stationInformation = stationInformationState.value;
-  const stationStatus = stationStatusState.value;
-
-  const stationStatusById: { [key: string]: StationStatusStation } = {};
-
-  stationStatus.data.stations.forEach(station => {
+  const stationStatusById: { [key: string]: StationStatusStation | undefined } = {};
+  stationStatusState.value.data.stations.forEach(station => {
     stationStatusById[station.station_id] = station;
   });
 
   return (
     <>
       <input placeholder="Søk" autoFocus onChange={e => setSearch(e.target.value)} />
-      {stationInformation.data.stations
+      {stationInformationState.value.data.stations
         .filter(station => station.name.toLowerCase().includes(search.toLowerCase()))
         .map(station =>
           <StationView
