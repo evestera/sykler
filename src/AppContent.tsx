@@ -31,7 +31,8 @@ export const AppContent: React.FC = () => {
       <input placeholder="Søk" autoFocus onChange={e => setSearch(e.target.value)} />
 
       {stationInformationState.value.data.stations
-        .filter(station => station.name.toLowerCase().includes(search.toLowerCase()))
+        .filter(station => station.name.toLowerCase().includes(search.toLowerCase())
+            || station.address.toLowerCase().includes(search.toLowerCase()))
         .map(station =>
           <StationView
             key={station.station_id}
@@ -42,4 +43,4 @@ export const AppContent: React.FC = () => {
       }
     </>
   );
-}
+};

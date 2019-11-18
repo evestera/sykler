@@ -11,7 +11,7 @@ type Props = {
 export const StationView: React.FC<Props> = ({ station, status }) => {
   return (
     <p>
-      {station.name}:{" "}
+      {station.name} <Address station={station} /><br />
       {status ? status.num_bikes_available : "-"} <i className="fa fa-bicycle"></i>{" "}
       {status ? status.num_docks_available : "-"} <i className="fa fa-lock"></i> - {" "}
       <a className="map-link" href={`https://www.google.com/maps/@${station.lat},${station.lon},17z`}>
@@ -19,4 +19,11 @@ export const StationView: React.FC<Props> = ({ station, status }) => {
       </a>
     </p>
   );
+};
+
+const Address: React.FC<Props> = ({station}) => {
+    if (station.name.toLowerCase() === station.address.toLowerCase()) {
+        return null;
+    }
+    return <small>({station.address})</small>;
 };
